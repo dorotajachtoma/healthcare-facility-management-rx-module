@@ -23,10 +23,16 @@
         <lombok.version>1.18.26</lombok.version>
         <swagger.version>2.1.0</swagger.version>
         <testcontainers.version>1.19.0</testcontainers.version>
+        <reference-entities.version>1.1.0</reference-entities.version>
     </properties>
 
 
     <dependencies>
+        <dependency>
+            <groupId>com.djachtoma</groupId>
+            <artifactId>healthcare-facility-management-reference-entities</artifactId>
+            <version>${reference-entities.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
