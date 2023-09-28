@@ -1,8 +1,8 @@
 package com.djachtoma.model.physician.dto;
 
-import com.djachtoma.model.Physician;
 import com.djachtoma.model.constant.Specialization;
 import com.djachtoma.model.constant.Title;
+import com.djachtoma.model.physician.Physician;
 import com.djachtoma.reference.entity.model.Address;
 import com.djachtoma.reference.entity.model.Gender;
 import com.djachtoma.reference.entity.model.IDCard;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Component
 public class PhysicianMapper {
     
-    public PhysicianDTO toDTO(Physician physician) {
+    public static PhysicianDTO toDTO(Physician physician) {
         return PhysicianDTO.builder()
                 .id(physician.getId())
                 .name(physician.getName())
@@ -34,7 +34,7 @@ public class PhysicianMapper {
                 .build();
     }
 
-    public Physician toEntity(PhysicianDTO physicianDTO) {
+    public static Physician toEntity(PhysicianDTO physicianDTO) {
         return Physician.builder()
                 .name(physicianDTO.getName())
                 .surname(physicianDTO.getSurname())

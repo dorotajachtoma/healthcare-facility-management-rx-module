@@ -1,12 +1,10 @@
-package com.djachtoma.model.refund;
+package com.djachtoma.model.refund.dto;
 
-import com.djachtoma.model.drug.Drug;
+import com.djachtoma.model.drug.dto.DrugDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
 
 import java.math.BigDecimal;
 
@@ -14,13 +12,12 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash(value = "refund")
-public class Refund {
+public class RefundDTO {
 
-    @Id
     private String id;
     private String code;
     private BigDecimal refundPercentage;
-    private Drug drug;
+    private DrugDTO drug;
     private boolean isRefundByGovernment;
+
 }
