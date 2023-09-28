@@ -14,7 +14,7 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash(value = "drugs")
+@RedisHash(value = "drug")
 public class Drug {
 
     @Id

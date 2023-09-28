@@ -1,6 +1,8 @@
-package com.djachtoma.model;
+package com.djachtoma.model.prescription;
 
 import com.djachtoma.model.drug.Drug;
+import com.djachtoma.model.patient.Patient;
+import com.djachtoma.model.physician.Physician;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

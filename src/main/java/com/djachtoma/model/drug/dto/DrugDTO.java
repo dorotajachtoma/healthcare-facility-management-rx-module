@@ -1,6 +1,7 @@
 package com.djachtoma.model.drug.dto;
 
 
+import com.djachtoma.model.substance.dto.SubstanceDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,5 +17,5 @@ public class DrugDTO {
 
     private String id;
     private String name;
-    private Set<String> substances;
+    private Set<SubstanceDTO> substances;
 }
