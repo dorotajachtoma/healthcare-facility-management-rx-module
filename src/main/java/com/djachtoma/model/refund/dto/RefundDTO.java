@@ -17,7 +17,6 @@ public class RefundDTO {
     private String id;
     private String code;
     private BigDecimal refundPercentage;
-    private DrugDTO drug;
     private boolean isRefundByGovernment;
 
 }
