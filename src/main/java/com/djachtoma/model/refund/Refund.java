@@ -1,6 +1,5 @@
 package com.djachtoma.model.refund;
 
-import com.djachtoma.model.drug.Drug;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,6 +20,5 @@ public class Refund {
     private String id;
     private String code;
     private BigDecimal refundPercentage;
-    private Drug drug;
     private boolean isRefundByGovernment;
 }

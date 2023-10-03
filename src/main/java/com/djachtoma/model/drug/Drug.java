@@ -1,5 +1,6 @@
 package com.djachtoma.model.drug;
 
+import com.djachtoma.model.refund.Refund;
 import com.djachtoma.model.substance.Substance;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,4 +22,5 @@ public class Drug {
     private String id;
     private String name;
     private Set<Substance> substances;
+    private Refund refund;
 }
