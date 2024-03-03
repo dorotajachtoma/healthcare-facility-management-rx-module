@@ -1,7 +1,7 @@
 package com.djachtoma.controller;
 
-import com.djachtoma.configuration.RedisContainerSetup;
-import com.djachtoma.configuration.TestSetup;
+import com.djachtoma.redis.RedisContainerSetup;
+import com.djachtoma.redis.TestSetup;
 import com.djachtoma.model.prescription.dto.PrescriptionDTO;
 
 import org.junit.Test;

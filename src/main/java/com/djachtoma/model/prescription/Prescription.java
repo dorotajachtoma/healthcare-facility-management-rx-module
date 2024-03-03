@@ -7,22 +7,35 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.neo4j.springframework.data.core.schema.GeneratedValue;
+import org.neo4j.springframework.data.core.schema.Node;
+import org.neo4j.springframework.data.core.schema.Relationship;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
 
+import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
 @Builder
+@Node("PRESCRIPTION")
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash(value = "prescription")
 public class Prescription {
 
     @Id
+    @GeneratedValue
     private String id;
     private String code;
+    @Relationship(type = "PRESCRIBER", direction = Relationship.Direction.INCOMING)
     private Physician physician;
+    @Relationship(type = "PRESCRIBED_TO", direction = Relationship.Direction.INCOMING)
     private Patient patient;
-    private Set<Drug> drugs;
+    @Relationship(type = "DRUGS", direction = Relationship.Direction.INCOMING)
+    private Set<Drug> drugs = new HashSet<>();
+
+    @CreatedDate
+    private LocalDateTime localDateTime;
 }
+

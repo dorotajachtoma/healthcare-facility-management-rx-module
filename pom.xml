@@ -24,6 +24,8 @@
         <swagger.version>2.1.0</swagger.version>
         <testcontainers.version>1.19.0</testcontainers.version>
         <reference-entities.version>1.1.0</reference-entities.version>
+        <spring-neo4j.version>1.1.1</spring-neo4j.version>
+        <neo4j-cypher-dsl.version>2023.9.4</neo4j-cypher-dsl.version>
     </properties>
 
 
@@ -54,6 +56,16 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.neo4j.springframework.data</groupId>
+            <artifactId>spring-data-neo4j-rx</artifactId>
+            <version>${spring-neo4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.neo4j</groupId>
+            <artifactId>neo4j-cypher-dsl</artifactId>
+            <version>${neo4j-cypher-dsl.version}</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
