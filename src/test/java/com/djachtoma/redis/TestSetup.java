@@ -1,4 +1,4 @@
-package com.djachtoma.configuration;
+package com.djachtoma.redis;
 
 import com.djachtoma.Application;
 import org.junit.runner.RunWith;
