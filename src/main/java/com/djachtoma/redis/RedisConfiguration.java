@@ -1,6 +1,5 @@
-package com.djachtoma.configuration;
+package com.djachtoma.redis;
 
-import com.djachtoma.model.patient.Patient;
 import com.djachtoma.model.prescription.Prescription;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +16,7 @@ import java.util.Collections;
 @RequiredArgsConstructor
 public class RedisConfiguration extends KeyspaceConfiguration {
 
-    private final ConnectionProperties properties;
+    private final RedisProperties properties;
 
     @Bean
     public JedisConnectionFactory jedisConnectionFactory() {

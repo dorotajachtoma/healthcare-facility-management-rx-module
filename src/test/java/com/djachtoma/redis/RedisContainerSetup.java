@@ -1,4 +1,4 @@
-package com.djachtoma.configuration;
+package com.djachtoma.redis;
 
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.utility.DockerImageName;
