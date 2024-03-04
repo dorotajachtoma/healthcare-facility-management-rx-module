@@ -27,10 +27,10 @@ public class PrescriptionService {
     private final PrescriptionRepository prescriptionRepository;
 
     public Flux<PrescriptionDTO> getPrescriptions() {
-        Iterable<PrescriptionDTO> prescriptions = Stream.of(prescriptionRepository.findAll().iterator())
-                .map(prescription -> PrescriptionMapper.toDTO(prescription.next()))
-                .collect(Collectors.toList());
-        return Flux.fromIterable(prescriptions);
+        //Iterable<PrescriptionDTO> prescriptions = Stream.of(prescriptionRepository.findAll().iterator())
+                //.map(prescription -> PrescriptionMapper.toDTO(prescription.next()))
+                //.collect(Collectors.toList());
+        return null;
     }
 
     public Mono<PrescriptionDTO> getPrescription(String id) {
@@ -40,14 +40,14 @@ public class PrescriptionService {
     @Transactional
     public Mono<PrescriptionDTO> createPrescription(PrescriptionDTO prescriptionDTO) {
         Prescription prescription = PrescriptionMapper.toEntity(prescriptionDTO);
-        prescriptionRepository.save(prescription);
+        //prescriptionRepository.save(prescription);
         return Mono.just(PrescriptionMapper.toDTO(prescription));
     }
 
     @Transactional
     public void deletePrescription(String id) {
         Prescription prescription = getPrescriptionById(id);
-        prescriptionRepository.delete(prescription);
+        //prescriptionRepository.delete(prescription);
     }
 
     @Transactional
@@ -59,8 +59,9 @@ public class PrescriptionService {
 
 
     private Prescription getPrescriptionById(String id) {
-        return prescriptionRepository.findById(id)
-                .orElseThrow(() -> new PrescriptionNotFoundException(String.format("Prescription with provided ID: %s does not exist.", id)));
+        //return prescriptionRepository.fin
+        //        .orElseThrow(() -> new PrescriptionNotFoundException(String.format("Prescription with provided ID: %s does not exist.", id)));
+        return null;
     }
 
     private void updatePrescriptionEntity(Prescription prescription, PrescriptionDTO prescriptionDTO) {
@@ -70,7 +71,7 @@ public class PrescriptionService {
         nullSafeUpdate(prescriptionDTO.getDrugs(), prescriptionDTO::getDrugs, x -> prescription.setDrugs(prescriptionDTO.getDrugs().stream()
                 .map(d -> DrugMapper.toEntity(d))
                 .collect(Collectors.toSet())));
-        prescriptionRepository.save(prescription);
+       // prescriptionRepository.save(prescription);
     }
 
 

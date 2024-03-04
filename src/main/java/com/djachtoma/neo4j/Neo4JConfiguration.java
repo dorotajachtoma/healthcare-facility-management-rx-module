@@ -16,4 +16,5 @@ public class Neo4JConfiguration {
                 .withDialect(Dialect.NEO4J_5)
                 .build();
     }
+
 }
